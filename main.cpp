@@ -21,32 +21,22 @@ void change(Student student) {
 }
 
 int main() {
-	Student st1, temp;
-
-	st1.name = "Bogdan";
-	st1.age = 14;
-	st1.mark = 9.5;
-	st1.alive = true;
-
-	temp = st1;
-
+	Student* st1 = new Student;
 	
-	
-	cout << "Before:" << endl; 
-	cout<< st1.getstring() << endl;
 
-	//change(st1);
-	st1.name = "Egor";
+	st1 -> name = "Vlad";
+	st1->age = 15;
+	st1->mark = 9.9;
+	st1->alive = true;
+
+	Student* st2 = st1;
+
+	cout << "Before:" << endl;
+	cout << st1->getstring() << endl;
+
+	st2->name = "Matvey";
 
 	cout << "After:" << endl;
-	cout << st1.getstring() << endl;
-
-	//cout << st2.getstring() << endl;
-
-	//string name = st1.mark > st2.mark ? st1.name : st2.name;
-	Student t = st1.mark > temp.mark ? st1: temp;
-	cout << "Best student name is" << t.name << endl;
-
-
+	cout << st1->getstring() << endl;
 	return 0;
 }
